@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <input type="number" id="temperature" placeholder="Insira a temperatura">
+        <br>
+        <button onclick="convertToFahrenheit()">Converter para Fahrenheit</button>
+        <button onclick="convertToCelsius()">Converter para Celsius</button>
+        <div class="result" id="result"></div>
+        <footer>
+            <p>Feito por Enzo Cristopher Oliveira Bittencourt</p>
+        </footer>
+    </div>
+
+    <script>
+        function convertToFahrenheit() {
+            let celsius = document.getElementById('temperature').value;
+            let fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('result').innerText = `${celsius}°C é igual a ${fahrenheit.toFixed(2)}°F`;
+        }
+
+        function convertToCelsius() {
+            let fahrenheit = document.getElementById('temperature').value;
+            let celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById('result').innerText = `${fahrenheit}°F é igual a ${celsius.toFixed(2)}°C`;
+        }
+    </script>
+</body>
+</html>
